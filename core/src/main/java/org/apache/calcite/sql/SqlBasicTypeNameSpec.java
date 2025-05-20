@@ -74,6 +74,10 @@ public class SqlBasicTypeNameSpec extends SqlTypeNameSpec {
 
   private final SqlTypeName sqlTypeName;
 
+  /*
+  private SqlTypeName showingTypeName;
+  */
+
   private int precision;
   private int scale;
 
@@ -106,6 +110,13 @@ public class SqlBasicTypeNameSpec extends SqlTypeNameSpec {
     this(typeName, -1, -1, null, pos);
   }
 
+  /*
+  public SqlBasicTypeNameSpec(SqlTypeName typeName, SqlTypeName showingTypeName, SqlParserPos pos) {
+    this(typeName, -1, -1, null, pos);
+    this.showingTypeName = showingTypeName;
+  }
+  */
+
   public SqlBasicTypeNameSpec(SqlTypeName typeName, int precision, SqlParserPos pos) {
     this(typeName, precision, -1, null, pos);
   }
@@ -127,6 +138,16 @@ public class SqlBasicTypeNameSpec extends SqlTypeNameSpec {
   public int getPrecision() {
     return precision;
   }
+
+  public SqlTypeName getSqlTypeName() {
+    return sqlTypeName;
+  }
+
+  /*
+  public SqlTypeName getShowingTypeName() {
+    return showingTypeName;
+  }
+  */
 
   public @Nullable String getCharSetName() {
     return charSetName;

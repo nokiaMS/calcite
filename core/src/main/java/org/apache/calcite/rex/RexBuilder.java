@@ -673,6 +673,8 @@ public class RexBuilder {
         return SqlTypeUtil.comparePrecision(toType.getPrecision(), length) == 0;
       case VARBINARY:
         return SqlTypeUtil.comparePrecision(toType.getPrecision(), length) >= 0;
+      case GXBIT:
+        return SqlTypeUtil.isValidBitValue(toType.getPrecision(), length);
       default:
         throw new AssertionError(toType);
       }

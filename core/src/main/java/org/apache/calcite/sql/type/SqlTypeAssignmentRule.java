@@ -159,6 +159,12 @@ public class SqlTypeAssignmentRule implements SqlTypeMappingRule {
     rule.add(SqlTypeName.VARBINARY);
     rules.add(SqlTypeName.BINARY, rule);
 
+    //GXBIT is assignable from...
+    rule.clear();
+    rule.add(SqlTypeName.GXBIT);
+    rule.add(SqlTypeName.BINARY);
+    rules.add(SqlTypeName.GXBIT, rule);
+
     // DATE is assignable from...
     rule.clear();
     rule.add(SqlTypeName.DATE);
